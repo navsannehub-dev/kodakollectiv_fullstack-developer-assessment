@@ -22,6 +22,8 @@ npm install
 
 ## Run
 
+### Development
+
 Terminal 1:
 
 ```bash
@@ -35,6 +37,15 @@ npm run dev
 ```
 
 Open http://127.0.0.1:8000
+
+### Production assets
+
+```bash
+npm run build
+php artisan serve
+```
+
+Compiled files are in `public/build` (already included in the repo).
 
 ## MySQL (optional)
 
