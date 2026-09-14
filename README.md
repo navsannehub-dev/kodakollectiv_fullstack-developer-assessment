@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Client Project Tracker
 
-## Getting Started
+Single Next.js app with REST API and UI in one project (no separate frontend/backend folders).
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router)
+- React
+- Prisma
+- SQLite
+
+## Prerequisites
+
+- Node.js 20+
+- npm
+
+## Setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Create the environment file:
+
+```bash
+cp .env.example .env
+```
+
+The default database URL is SQLite:
+
+```
+DATABASE_URL="file:./dev.db"
+```
+
+3. Apply migrations and generate the Prisma client:
+
+```bash
+npx prisma migrate dev
+```
+
+4. Seed sample projects (optional):
+
+```bash
+npm run seed
+```
+
+## Run
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Other scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run build` | Generate Prisma client and build for production |
+| `npm start` | Start the production server |
+| `npm run db:migrate` | Run Prisma migrations |
+| `npm run db:reset` | Reset the database and re-run migrations |
+| `npm run seed` | Insert sample projects |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## API
 
-To learn more about Next.js, take a look at the following resources:
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/projects` | List projects |
+| GET | `/projects/:id` | Get one project |
+| POST | `/projects` | Create project |
+| PUT | `/projects/:id` | Update project |
+| DELETE | `/projects/:id` | Delete project |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Query params for `GET /projects`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `search` — client name, project name, or description
+- `status` — Planning | In Progress | On Hold | Completed
+- `priority` — Low | Medium | High
+- `sort` — dueDate | startDate | clientName | projectName | priority | status | createdAt
+- `order` — asc | desc
 
-## Deploy on Vercel
+### Example create body
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+{
+  "clientName": "Acme Co",
+  "projectName": "Website Redesign",
+  "description": "Marketing site refresh",
+  "status": "Planning",
+  "priority": "High",
+  "startDate": "2026-09-11",
+  "dueDate": "2026-10-30"
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Validation
+
+- Client Name required
+- Project Name required
+- Status must be valid
+- Priority must be valid
+- Due Date cannot be earlier than Start Date
