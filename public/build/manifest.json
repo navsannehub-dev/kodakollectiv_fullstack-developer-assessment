@@ -1,0 +1,69 @@
+{
+  "_fonts-CBWrhXMY.css": {
+    "file": "assets/fonts-CBWrhXMY.css",
+    "src": "_fonts-CBWrhXMY.css"
+  },
+  "_fraunces-500-normal-BTR4KCeb.woff": {
+    "file": "assets/fraunces-500-normal-BTR4KCeb.woff",
+    "src": "_fraunces-500-normal-BTR4KCeb.woff"
+  },
+  "_fraunces-500-normal-DnGCNyPD.woff2": {
+    "file": "assets/fraunces-500-normal-DnGCNyPD.woff2",
+    "src": "_fraunces-500-normal-DnGCNyPD.woff2"
+  },
+  "_fraunces-600-normal-BFCDtZfi.woff2": {
+    "file": "assets/fraunces-600-normal-BFCDtZfi.woff2",
+    "src": "_fraunces-600-normal-BFCDtZfi.woff2"
+  },
+  "_fraunces-600-normal-DL5QCzvS.woff": {
+    "file": "assets/fraunces-600-normal-DL5QCzvS.woff",
+    "src": "_fraunces-600-normal-DL5QCzvS.woff"
+  },
+  "_outfit-400-normal-BGsTXAXT.woff2": {
+    "file": "assets/outfit-400-normal-BGsTXAXT.woff2",
+    "src": "_outfit-400-normal-BGsTXAXT.woff2"
+  },
+  "_outfit-400-normal-DMwTpYkH.woff": {
+    "file": "assets/outfit-400-normal-DMwTpYkH.woff",
+    "src": "_outfit-400-normal-DMwTpYkH.woff"
+  },
+  "_outfit-500-normal-ClnHRwRh.woff": {
+    "file": "assets/outfit-500-normal-ClnHRwRh.woff",
+    "src": "_outfit-500-normal-ClnHRwRh.woff"
+  },
+  "_outfit-500-normal-DKnIMDSk.woff2": {
+    "file": "assets/outfit-500-normal-DKnIMDSk.woff2",
+    "src": "_outfit-500-normal-DKnIMDSk.woff2"
+  },
+  "_outfit-600-normal-B7SfZ07L.woff2": {
+    "file": "assets/outfit-600-normal-B7SfZ07L.woff2",
+    "src": "_outfit-600-normal-B7SfZ07L.woff2"
+  },
+  "_outfit-600-normal-BEfTtDA7.woff": {
+    "file": "assets/outfit-600-normal-BEfTtDA7.woff",
+    "src": "_outfit-600-normal-BEfTtDA7.woff"
+  },
+  "_outfit-700-normal-Cu9v6i1X.woff2": {
+    "file": "assets/outfit-700-normal-Cu9v6i1X.woff2",
+    "src": "_outfit-700-normal-Cu9v6i1X.woff2"
+  },
+  "_outfit-700-normal-D4itBLBr.woff": {
+    "file": "assets/outfit-700-normal-D4itBLBr.woff",
+    "src": "_outfit-700-normal-D4itBLBr.woff"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Cmn7e-bf.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DHSQw9F_.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true
+  }
+}
