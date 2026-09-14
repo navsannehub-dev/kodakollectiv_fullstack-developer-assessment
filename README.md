@@ -108,3 +108,13 @@ APP_URL=https://kodakollectiv.navsanneworks.com
 ```
 
 4. Make sure `vendor/` exists on the server (`composer install`). Without it Laravel returns 500.
+
+5. Open https://your-domain/server-check.php to see what is missing.
+
+6. Add `SETUP_TOKEN=your-secret` to `.env`, then open:
+
+```
+https://your-domain/__setup?token=your-secret
+```
+
+That runs migrate + seed once. Remove `SETUP_TOKEN` after.

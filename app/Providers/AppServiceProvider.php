@@ -15,5 +15,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         JsonResource::withoutWrapping();
+
+        if (config('database.default') === 'sqlite') {
+            $path = config('database.connections.sqlite.database');
+
+            if (is_string($path) && $path !== ':memory:' && ! file_exists($path)) {
+                $directory = dirname($path);
+
+                if (! is_dir($directory)) {
+                    mkdir($directory, 0755, true);
+                }
+
+                touch($path);
+            }
+        }
     }
 }
