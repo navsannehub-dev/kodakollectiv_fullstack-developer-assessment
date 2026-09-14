@@ -84,10 +84,27 @@ php artisan migrate --seed
 - `sort`
 - `order`
 
-## Validation
+## Hostinger deploy
 
-- Client Name required
-- Project Name required
-- Status must be valid
-- Priority must be valid
-- Due Date cannot be earlier than Start Date
+1. Point the domain document root to the `public` folder  
+   **or** keep the repo root `.htaccess` that routes into `public`.
+2. On the server:
+
+```bash
+composer install --no-dev --optimize-autoloader
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite
+php artisan migrate --seed --force
+chmod -R 775 storage bootstrap/cache
+```
+
+3. Set in `.env`:
+
+```
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://kodakollectiv.navsanneworks.com
+```
+
+4. Make sure `vendor/` exists on the server (`composer install`). Without it Laravel returns 500.
